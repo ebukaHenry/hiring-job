@@ -34,7 +34,7 @@ function Dashboard() {
     },[token]);
 
     const fetchjobs=async()=>{
-        const res= await axios.get("https://job-hiring-backend.onrender.com/api/jobs",{
+        const res= await axios.get("https://job-hiring-backend-1.onrender.com/api/jobs",{
             headers:{Authorization: `Bearer ${token}`}
         });
         setJobs(res.data);

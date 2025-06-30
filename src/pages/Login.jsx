@@ -27,7 +27,7 @@ function Login() {
         e.preventDefault();
         setError("");
         try {
-            const res= await axios.post("https://job-hiring-backend.onrender.com/api/auth/login", formData);
+            const res= await axios.post("https://job-hiring-backend-1.onrender.com/api/auth/login", formData);
             if (!res.data || !res.data.token) {
             throw new Error("Invalid response from server");
             }

@@ -30,7 +30,7 @@ function Register() {
             return;
         }
         try {
-            const response= await axios.post("https://job-hiring-backend.onrender.com/api/auth/register", formData);
+            const response= await axios.post("https://job-hiring-backend-1.onrender.com/api/auth/register", formData);
             navigate("/login");
         } catch (error) {
             console.error("Registration failed", error.message);

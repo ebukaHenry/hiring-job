@@ -46,7 +46,7 @@ function Admin() {
             if(user?.role !=="merchant"){
                 setError("Unathorized user!");
             }
-            const res= await axios.post("https://job-hiring-backend.onrender.com/api/admin", jobDescription,{
+            const res= await axios.post("https://job-hiring-backend-1.onrender.com/api/admin", jobDescription,{
                 headers:{Authorization: `Bearer ${token}`}
             });
             console.log("Successful", res.data);
@@ -68,7 +68,7 @@ function Admin() {
         const fetchApplicants=async()=>{
             const token=localStorage.getItem("token");
             try {
-                const res= await axios.get("https://job-hiring-backend.onrender.com/api/applicants", {
+                const res= await axios.get("https://job-hiring-backend-1.onrender.com/api/applicants", {
                     headers: {Authorization: `Bearer ${token}`},
                 });
                 setApplicants(res.data);
