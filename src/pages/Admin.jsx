@@ -3,6 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 import Navbar from "../components/Navbar";
 import { jwtDecode } from "jwt-decode";
+const API = process.env.REACT_APP_API_URL;
 
 function Admin() {
 
@@ -68,7 +69,7 @@ function Admin() {
         const fetchApplicants=async()=>{
             const token=localStorage.getItem("token");
             try {
-                const res= await axios.get("https://job-hiring-backend-1.onrender.com/api/applicants", {
+                const res= await axios.get(`${API}/api/applicants`, {
                     headers: {Authorization: `Bearer ${token}`},
                 });
                 setApplicants(res.data);
